@@ -24,14 +24,15 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="42dp"
         android:layout_marginBottom="8dp"
+        android:autofillHints=""
         android:ems="10"
         android:hint="@string/add_guess"
         android:inputType="textPersonName"
+        android:textSize="36sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.378"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button_guess"
-        app:layout_constraintVertical_bias="0.047"
-        android:autofillHints="" />
+        app:layout_constraintVertical_bias="0.047" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -6,11 +6,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
     private Button showGuess;
+    private EditText enterGuess;
+
 
 
     @Override
@@ -19,12 +22,22 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         showGuess = findViewById(R.id.button_guess);
+        enterGuess = findViewById(R.id.guess_field);
         showGuess.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, ShowGuess.class);
-                intent.putExtra("guess","hello there");
-                startActivity(intent);
+
+                String guess = enterGuess.getText().toString().trim();
+
+                if(!guess.isEmpty()) {
+                    Intent intent = new Intent(MainActivity.this, ShowGuess.class);
+                    intent.putExtra("guess",guess);
+                    startActivity(intent);
+                } else {
+                    Toast.makeText(MainActivity.this, "Please enter guess",
+                            Toast.LENGTH_SHORT).show();
+                }
+
             }
         });
 
