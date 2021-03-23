@@ -12,6 +12,7 @@ public class MainActivity extends AppCompatActivity {
 
     private Button showGuess;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, ShowGuess.class);
+                intent.putExtra("guess","hello there");
                 startActivity(intent);
             }
         });
