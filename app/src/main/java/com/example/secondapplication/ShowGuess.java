@@ -17,10 +17,18 @@ public class ShowGuess extends AppCompatActivity {
 
         showGuessedText = findViewById(R.id.received_textview);
 
-        if(getIntent().getStringExtra("guess") != null) {
+        Bundle extra = getIntent().getExtras();
+
+        if(extra != null) {
+            Log.d("Extra", " " +  extra.getInt("age"));
+            showGuessedText.setText(extra.getString("guess"));
+
+        }
+
+        /*if(getIntent().getStringExtra("guess") != null) {
             Log.d("Stuff", " " + getIntent().getStringExtra("age"));
             showGuessedText.setText(getIntent().getStringExtra("guess"));
-        }
+        }*/
 
     }
 }
