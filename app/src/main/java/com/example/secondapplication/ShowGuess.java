@@ -3,6 +3,7 @@ package com.example.secondapplication;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.TextView;
 
 public class ShowGuess extends AppCompatActivity {
@@ -17,6 +18,7 @@ public class ShowGuess extends AppCompatActivity {
         showGuessedText = findViewById(R.id.received_textview);
 
         if(getIntent().getStringExtra("guess") != null) {
+            Log.d("Stuff", " " + getIntent().getStringExtra("age"));
             showGuessedText.setText(getIntent().getStringExtra("guess"));
         }
 

@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
                 if(!guess.isEmpty()) {
                     Intent intent = new Intent(MainActivity.this, ShowGuess.class);
                     intent.putExtra("guess",guess);
+                    intent.putExtra("age", "34");
                     startActivity(intent);
                 } else {
                     Toast.makeText(MainActivity.this, "Please enter guess",
