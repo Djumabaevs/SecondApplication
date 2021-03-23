@@ -1,5 +1,6 @@
 package com.example.secondapplication;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -13,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
 
     private Button showGuess;
     private EditText enterGuess;
+    private final int REQUEST_CODE = 2;
 
 
 
@@ -43,6 +45,12 @@ public class MainActivity extends AppCompatActivity {
         });
 
         Toast.makeText(MainActivity.this, "OnCreate method: ", Toast.LENGTH_LONG).show();
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
     }
 
     @Override
