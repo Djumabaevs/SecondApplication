@@ -35,7 +35,8 @@ public class MainActivity extends AppCompatActivity {
                     Intent intent = new Intent(MainActivity.this, ShowGuess.class);
                     intent.putExtra("guess", guess);
                     intent.putExtra("age", 34);
-                    startActivity(intent);
+                    startActivityForResult(intent, REQUEST_CODE);
+                   // startActivity(intent);
                 } else {
                     Toast.makeText(MainActivity.this, "Please enter guess",
                             Toast.LENGTH_SHORT).show();
@@ -44,15 +45,22 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        Toast.makeText(MainActivity.this, "OnCreate method: ", Toast.LENGTH_LONG).show();
+       /* Toast.makeText(MainActivity.this, "OnCreate method: ", Toast.LENGTH_LONG).show();*/
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-    }
+        if(requestCode == REQUEST_CODE) {
+                String message = data.getStringExtra("message_back");
+                Toast.makeText(MainActivity.this, message,
+                        Toast.LENGTH_LONG).show();
 
+        }
+
+    }
+/*
     @Override
     protected void onStart() {
         super.onStart();
@@ -76,5 +84,5 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-    }
+    }*/
 }

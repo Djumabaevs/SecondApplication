@@ -32,6 +32,7 @@ public class ShowGuess extends AppCompatActivity {
                 Intent intent = getIntent();
                 intent.putExtra("message back", "From second activity");
                 setResult(RESULT_OK, intent);
+                finish();
             }
         });
 
