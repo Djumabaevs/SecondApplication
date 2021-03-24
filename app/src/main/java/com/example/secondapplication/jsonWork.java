@@ -7,9 +7,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import org.json.JSONObject;
 
-public class jsonWork {
-    package com.example.connectingtoweb;
-
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -25,7 +22,12 @@ import com.android.volley.toolbox.Volley;
 
 import org.json.JSONObject;
 
-    public class MainActivity extends AppCompatActivity {
+
+public class jsonWork {
+
+
+
+  static class MainActivity extends AppCompatActivity {
 
         RequestQueue queue;
         String url = "http://www.google.com";
